@@ -10,6 +10,11 @@ public class BuySkin : MonoBehaviour
     public Text bani;
     public Text buton;
     float value = 0;
+    private void Awake()
+    {
+        if (Data.cump[0] == 1)
+            buton.text = "Equip";
+    }
     public void ChangedMaterial()
     {
         value=slider.value;

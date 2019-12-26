@@ -1,24 +1,10 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Levels : MonoBehaviour
 {
-    public void Scene()
+    public void Scene(int x)
     {
-        SceneManager.LoadScene(2);
-    }
-
-    public void Scene2()
-    {
-        SceneManager.LoadScene(3);
-    }
-    public void Scene3()
-    {
-        SceneManager.LoadScene(4);
-    }
-    public void Scene4()
-    {
-        SceneManager.LoadScene(5);
+        SceneManager.LoadScene(x);
     }
 }

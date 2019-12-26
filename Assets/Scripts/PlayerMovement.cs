@@ -10,7 +10,6 @@ public class PlayerMovement : MonoBehaviour
     private float forwardForce = 1200;
     private float sidewaysForce = 60;
     private float x;
-    private float stg;
     private float width;
     private float height;
 
@@ -32,22 +31,22 @@ public class PlayerMovement : MonoBehaviour
             Touch touch = Input.GetTouch(0);
 
             // Move the cube if the screen has the finger moving.
-            if (touch.phase == TouchPhase.Moved)
+            if (touch.phase == TouchPhase.Began)
             {
                 Vector2 pos = touch.position;
                 pos.x = (pos.x - width) / width;
-                rb.AddForce(sidewaysForce * Time.deltaTime * pos.x *1.5f, 0, 0, ForceMode.VelocityChange);
+                rb.AddForce(sidewaysForce * Time.deltaTime * pos.x *2.25f, 0, 0, ForceMode.VelocityChange);
 
             }
 
         }
         else
-            rb.AddForce(sidewaysForce * Time.deltaTime * x * 2, 0, 0, ForceMode.VelocityChange);
+            rb.AddForce(sidewaysForce * Time.deltaTime * x * 1.25f, 0, 0, ForceMode.VelocityChange);
         if (rb.position.y < -1f)
         {
             FindObjectOfType<GameManager>().EndGame();
         }
-        Debug.Log(x.ToString() + " " + stg.ToString());
+        //Debug.Log(x.ToString() + " " + stg.ToString());
     }
 }
 

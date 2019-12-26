@@ -2151,6 +2151,11 @@ PrefabInstance:
       propertyPath: mainMenuScene
       value: Menu
       objectReference: {fileID: 0}
+    - target: {fileID: 8496944477588926897, guid: 7f975f57020771e43946620f8df0146a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Pause
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7457059187964869387, guid: 7f975f57020771e43946620f8df0146a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7f975f57020771e43946620f8df0146a, type: 3}
