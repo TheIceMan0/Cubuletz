@@ -110,7 +110,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 3
 --- !u!114 &5926399365721270067
 MonoBehaviour:
@@ -125,8 +125,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 6010479219505540925}
-  forwardForce: 1000
-  sidewaysForce: 60
 --- !u!114 &5922368831578526861
 MonoBehaviour:
   m_ObjectHideFlags: 0
