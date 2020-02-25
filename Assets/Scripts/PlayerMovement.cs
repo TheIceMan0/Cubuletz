@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody rb;
 
     private float forwardForce = 1200;
-    private float sidewaysForce = 60;
+    [SerializeField]private float sidewaysForce = 40;
     private float x;
     private float width;
     private float height;
