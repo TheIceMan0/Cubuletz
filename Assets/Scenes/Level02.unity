@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -184,16 +184,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 4811888007981892233, guid: 7f975f57020771e43946620f8df0146a,
-        type: 3}
-      propertyPath: mainMenuScene
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4112327971915613764, guid: 7f975f57020771e43946620f8df0146a,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3255090252280596527, guid: 7f975f57020771e43946620f8df0146a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -299,15 +289,10 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4112327972649867031, guid: 7f975f57020771e43946620f8df0146a,
+    - target: {fileID: 4811888007981892233, guid: 7f975f57020771e43946620f8df0146a,
         type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 792383476}
-    - target: {fileID: 4112327972649867031, guid: 7f975f57020771e43946620f8df0146a,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: BackToStart
+      propertyPath: mainMenuScene
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3255090252821443572, guid: 7f975f57020771e43946620f8df0146a,
         type: 3}
@@ -384,6 +369,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0.00012207
       objectReference: {fileID: 0}
+    - target: {fileID: 4112327971915613764, guid: 7f975f57020771e43946620f8df0146a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4112327971842549172, guid: 7f975f57020771e43946620f8df0146a,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -408,6 +398,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4112327972649867031, guid: 7f975f57020771e43946620f8df0146a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 792383476}
+    - target: {fileID: 4112327972649867031, guid: 7f975f57020771e43946620f8df0146a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BackToStart
       objectReference: {fileID: 0}
     - target: {fileID: 3914090544894018712, guid: 7f975f57020771e43946620f8df0146a,
         type: 3}
@@ -737,7 +737,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 231062162}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3, z: 200.6}
+  m_LocalPosition: {x: 0, y: 3, z: 260}
   m_LocalScale: {x: 15, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 0}

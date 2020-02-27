@@ -8,9 +8,10 @@ public class Infinit_Generator : MonoBehaviour
     public Transform player;
     private float lenght;
     public int rand;
+    private GameObject clone;
     [SerializeField]private GameObject ground;
     [SerializeField] private GameObject[] obstacole=new GameObject[7];
-    // Update is called once per frame
+
     void Start()
     {
         StartCoroutine(ExecuteAfterTime(0.01f));
@@ -24,18 +25,24 @@ public class Infinit_Generator : MonoBehaviour
         player = GameObject.Find("Player").transform;
     }
 
-    // Update is called once per frame
+    private void Destroy()
+    {
+        Destroy(clone);
+    }
+
     void Update()
     {
         lenght = ground.transform.localScale[2];
         poz.z = player.position.z;
+        //Invoke("Destroy", 8);
         if (((lenght)/2)-20f < player.position.z)
         {
             ground.transform.localScale += offset;
             rand = Random.Range(0, 6);
             poz.z += 30f;
-            Instantiate(obstacole[rand], poz, Quaternion.identity);
+            clone=Instantiate(obstacole[rand], poz, Quaternion.identity);
         }
+        
             
     }
 }
