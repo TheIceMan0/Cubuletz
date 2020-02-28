@@ -41,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
 
         }
         else
-            rb.AddForce(sidewaysForce * Time.deltaTime * x * 1f, 0, 0, ForceMode.VelocityChange);
+            rb.AddForce(sidewaysForce * Time.deltaTime * x *0.8f, 0, 0, ForceMode.VelocityChange);
         if (rb.position.y < -1f)
         {
             FindObjectOfType<GameManager>().EndGame();
