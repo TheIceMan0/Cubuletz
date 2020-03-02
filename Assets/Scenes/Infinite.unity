@@ -190,7 +190,7 @@ PrefabInstance:
     - target: {fileID: 4617534164029231318, guid: 50f102879b4dbc34da34c6f93d254842,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 100
+      value: 120
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50f102879b4dbc34da34c6f93d254842, type: 3}
@@ -388,12 +388,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abb28c80fca30834ba33f7b7b75acb9f, type: 3}
---- !u!1 &1573523781 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4617534164029231314, guid: 50f102879b4dbc34da34c6f93d254842,
-    type: 3}
-  m_PrefabInstance: {fileID: 636715097}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1996341353
 GameObject:
   m_ObjectHideFlags: 0
@@ -454,10 +448,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offset: {x: 0, y: 0, z: 120}
-  poz: {x: 0, y: 0, z: 0}
+  poz: {x: 3.5, y: 1.5, z: 0}
+  poz_grd: {x: 0, y: 0, z: 0}
   player: {fileID: 0}
+  lenght: 0
   rand: 0
-  ground: {fileID: 1573523781}
+  ground: {fileID: 4617534164029231314, guid: 50f102879b4dbc34da34c6f93d254842, type: 3}
   obstacole:
   - {fileID: 6153380078000348717, guid: 28619b4af6dc6234e92b27e77e267626, type: 3}
   - {fileID: 2947563810558434361, guid: 39fe6bb1c3403d24ba516f58759e1b8d, type: 3}

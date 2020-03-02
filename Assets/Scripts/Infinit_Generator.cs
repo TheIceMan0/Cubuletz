@@ -1,22 +1,23 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+
+
 
 public class Infinit_Generator : MonoBehaviour
 {
-    public Vector3 offset, poz;
+    public Vector3 offset,poz,poz_grd;
     public Transform player;
-    private float lenght,time;
+    [SerializeField] private float lenght;
     public int rand;
     private GameObject clone;
-    [SerializeField]private GameObject ground;
-    [SerializeField] private GameObject[] obstacole=new GameObject[7];
+    public GameObject ground;
+    [SerializeField] private GameObject[] obstacole = new GameObject[7];
+    // Update is called once per frame
 
     void Start()
     {
         StartCoroutine(ExecuteAfterTime(0.01f));
-        lenght = ground.transform.localScale[2];
-        poz = new Vector3(3.55f, 1f, 0f);
+        lenght = 120;
     }
 
     IEnumerator ExecuteAfterTime(float time)
@@ -24,25 +25,31 @@ public class Infinit_Generator : MonoBehaviour
         yield return new WaitForSeconds(time);
         player = GameObject.Find("Player").transform;
     }
+    // Update is called once per frame
 
     void Update()
     {
-        lenght = ground.transform.position.z;
-        poz.z = player.position.z;
         
-        if (((lenght)/2)-20f < player.position.z)
+        poz.z = player.position.z;
+        //Invoke("Destroy", 8);
+        if (lenght-player.position.z<=80f)
         {
-            Instantiate(ground,offset , Quaternion.identity);
-            rand = Random.Range(0, 6);
-            poz.z += 20f;
-            offset += new Vector3(0, 0, lenght);
+            //player.position.z+=1;
+            poz_grd.z = lenght;
+            poz.z += 40f;
+            Instantiate(ground, poz_grd, Quaternion.identity);
+            lenght += 120;
             clone = Instantiate(obstacole[rand], poz, Quaternion.identity);
-            time = time + Time.fixedDeltaTime;
-            if (time > 10.0f)
-            {
-                Destroy(clone);
-                time = 0.0f;
-            }
         }
+        if (lenght - player.position.z <= 40f)
+        {
+            clone = Instantiate(obstacole[rand], poz, Quaternion.identity);
+        }
+
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        if(collision.gameObject.tag=="ground")
+            Destroy(collision.gameObject);
     }
 }
