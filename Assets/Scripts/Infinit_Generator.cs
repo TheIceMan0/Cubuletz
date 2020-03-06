@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class Infinit_Generator : MonoBehaviour
 {
-    public Vector3 offset,poz,poz_grd;
+    public Vector3 offset,poz,cop_poz,poz_grd;
     public Transform player;
-    [SerializeField] private float lenght;
+    [SerializeField] private float lenght, delay=0.0f;
     public int rand;
     private GameObject clone;
     public GameObject ground;
@@ -29,27 +29,26 @@ public class Infinit_Generator : MonoBehaviour
 
     void Update()
     {
-        
+        rand = Random.Range(0, 7);
         poz.z = player.position.z;
+        poz.z += 30f;
+        
         //Invoke("Destroy", 8);
-        if (lenght-player.position.z<=80f)
+        if (lenght-player.position.z<=100f)
         {
-            //player.position.z+=1;
             poz_grd.z = lenght;
-            poz.z += 40f;
+            poz_grd.y -= 0.01f;
+
             Instantiate(ground, poz_grd, Quaternion.identity);
             lenght += 120;
-            clone = Instantiate(obstacole[rand], poz, Quaternion.identity);
         }
-        if (lenght - player.position.z <= 40f)
-        {
-            clone = Instantiate(obstacole[rand], poz, Quaternion.identity);
-        }
+        delay += Time.deltaTime;
 
+        if (delay > 2.0f&&cop_poz!=poz) { 
+            Instantiate(obstacole[rand], poz, Quaternion.identity);
+            delay = 0f;
+            cop_poz = poz;
+        }
     }
-    private void OnCollisionExit(Collision collision)
-    {
-        if(collision.gameObject.tag=="ground")
-            Destroy(collision.gameObject);
-    }
+    
 }

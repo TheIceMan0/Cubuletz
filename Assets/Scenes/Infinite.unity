@@ -386,6 +386,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 691286747156214253, guid: abb28c80fca30834ba33f7b7b75acb9f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8364635224049929374, guid: abb28c80fca30834ba33f7b7b75acb9f,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abb28c80fca30834ba33f7b7b75acb9f, type: 3}
 --- !u!1 &1996341353
@@ -419,7 +429,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coll: {fileID: 0}
-  restartDelay: 2
+  restartDelay: 1
   completeLevelUI: {fileID: 996108249}
 --- !u!4 &1996341355
 Transform:
@@ -449,9 +459,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: {x: 0, y: 0, z: 120}
   poz: {x: 3.5, y: 1.5, z: 0}
+  cop_poz: {x: 0, y: 0, z: 0}
   poz_grd: {x: 0, y: 0, z: 0}
   player: {fileID: 0}
   lenght: 0
+  delay: 0
   rand: 0
   ground: {fileID: 4617534164029231314, guid: 50f102879b4dbc34da34c6f93d254842, type: 3}
   obstacole:
