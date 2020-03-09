@@ -4,8 +4,9 @@ using UnityEngine.UI;
 
 public class Score : MonoBehaviour {
 
-	public Transform player;
-	public Text scoreText;
+	[SerializeField]private Transform player;
+	[SerializeField]private Text scoreText;
+	protected float score;
     //public Text Banut;
     void Start()
     {
@@ -16,11 +17,17 @@ public class Score : MonoBehaviour {
     {
         yield return new WaitForSeconds(time);
         player = GameObject.Find("Player").transform;
+        scoreText = GameObject.Find("Score").GetComponent<Text>();
     }
 
+    public float GetScore()
+    {
+        return score;
+    }
     // Update is called once per frame
     void Update () {
-		scoreText.text = player.position.z.ToString("0");
-       // Banut.text = k.ToString("0");
+
+        score = player.position.z;
+        scoreText.text=score.ToString("0");
     }
 }
